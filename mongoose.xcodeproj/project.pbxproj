@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A346208182D4763002A5E57 /* mongoose.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461B9182CB54B002A5E57 /* mongoose.cpp */; };
+		3A346209182D4763002A5E57 /* mongoose.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461BA182CB54B002A5E57 /* mongoose.h */; };
+		3A34620A182D4787002A5E57 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A346177182CB54B002A5E57 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A346163182CB3EC002A5E57 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A346165182CB3EC002A5E57 /* mongoose */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mongoose; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A346170182CB54B002A5E57 /* dll.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dll.def; sourceTree = "<group>"; };
+		3A346171182CB54B002A5E57 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A346173182CB54B002A5E57 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		3A346174182CB54B002A5E57 /* lsqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lsqlite3.c; sourceTree = "<group>"; };
+		3A346175182CB54B002A5E57 /* lua_5.2.1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_5.2.1.c; sourceTree = "<group>"; };
+		3A346176182CB54B002A5E57 /* lua_5.2.1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_5.2.1.h; sourceTree = "<group>"; };
+		3A346177182CB54B002A5E57 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3A346178182CB54B002A5E57 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		3A346179182CB54B002A5E57 /* mongoose.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mongoose.ai; sourceTree = "<group>"; };
+		3A34617A182CB54B002A5E57 /* mongoose.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = mongoose.icns; sourceTree = "<group>"; };
+		3A34617B182CB54B002A5E57 /* mongoose_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mongoose_16x16.png; sourceTree = "<group>"; };
+		3A34617C182CB54B002A5E57 /* mongoose_16x16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mongoose_16x16@2x.png"; sourceTree = "<group>"; };
+		3A34617D182CB54B002A5E57 /* mongoose_22x22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mongoose_22x22.png; sourceTree = "<group>"; };
+		3A34617E182CB54B002A5E57 /* mongoose_22x22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mongoose_22x22@2x.png"; sourceTree = "<group>"; };
+		3A34617F182CB54B002A5E57 /* mongoose_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mongoose_32x32.png; sourceTree = "<group>"; };
+		3A346180182CB54B002A5E57 /* mongoose_32x32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mongoose_32x32@2x.png"; sourceTree = "<group>"; };
+		3A346181182CB54B002A5E57 /* mongoose_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mongoose_64x64.png; sourceTree = "<group>"; };
+		3A346182182CB54B002A5E57 /* mongoose_64x64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mongoose_64x64@2x.png"; sourceTree = "<group>"; };
+		3A346183182CB54B002A5E57 /* res.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = res.rc; sourceTree = "<group>"; };
+		3A346184182CB54B002A5E57 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		3A346185182CB54B002A5E57 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		3A346187182CB54B002A5E57 /* auth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = auth.c; sourceTree = "<group>"; };
+		3A346188182CB54B002A5E57 /* crypto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypto.c; sourceTree = "<group>"; };
+		3A346189182CB54B002A5E57 /* http_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http_client.c; sourceTree = "<group>"; };
+		3A34618A182CB54B002A5E57 /* internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		3A34618B182CB54B002A5E57 /* lua.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua.c; sourceTree = "<group>"; };
+		3A34618C182CB54B002A5E57 /* mg_printf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mg_printf.c; sourceTree = "<group>"; };
+		3A34618D182CB54B002A5E57 /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mongoose.c; sourceTree = "<group>"; };
+		3A34618E182CB54B002A5E57 /* options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = options.c; sourceTree = "<group>"; };
+		3A34618F182CB54B002A5E57 /* parse_date.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parse_date.c; sourceTree = "<group>"; };
+		3A346190182CB54B002A5E57 /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ssl.c; sourceTree = "<group>"; };
+		3A346191182CB54B002A5E57 /* string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = string.c; sourceTree = "<group>"; };
+		3A346192182CB54B002A5E57 /* unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unix.c; sourceTree = "<group>"; };
+		3A346193182CB54B002A5E57 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		3A346194182CB54B002A5E57 /* win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = win32.c; sourceTree = "<group>"; };
+		3A346195182CB54B002A5E57 /* ssl_cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl_cert.pem; sourceTree = "<group>"; };
+		3A346196182CB54B002A5E57 /* systray.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = systray.ico; sourceTree = "<group>"; };
+		3A346198182CB54B002A5E57 /* AndroidBuild.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AndroidBuild.md; sourceTree = "<group>"; };
+		3A346199182CB54B002A5E57 /* API.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.md; sourceTree = "<group>"; };
+		3A34619A182CB54B002A5E57 /* FAQ.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FAQ.md; sourceTree = "<group>"; };
+		3A34619B182CB54B002A5E57 /* Internals.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Internals.md; sourceTree = "<group>"; };
+		3A34619C182CB54B002A5E57 /* LuaSqlite.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LuaSqlite.md; sourceTree = "<group>"; };
+		3A34619D182CB54B002A5E57 /* Options.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Options.md; sourceTree = "<group>"; };
+		3A34619E182CB54B002A5E57 /* SSL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SSL.md; sourceTree = "<group>"; };
+		3A34619F182CB54B002A5E57 /* Usage.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Usage.md; sourceTree = "<group>"; };
+		3A3461A2182CB54B002A5E57 /* example.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.cs; sourceTree = "<group>"; };
+		3A3461A3182CB54B002A5E57 /* mongoose.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mongoose.cs; sourceTree = "<group>"; };
+		3A3461A4182CB54B002A5E57 /* chat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = chat.c; sourceTree = "<group>"; };
+		3A3461A5182CB54B002A5E57 /* hello.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hello.c; sourceTree = "<group>"; };
+		3A3461A7182CB54B002A5E57 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		3A3461A8182CB54B002A5E57 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3A3461A9182CB54B002A5E57 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		3A3461AA182CB54B002A5E57 /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = login.html; sourceTree = "<group>"; };
+		3A3461AB182CB54B002A5E57 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		3A3461AC182CB54B002A5E57 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		3A3461AD182CB54B002A5E57 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		3A3461AF182CB54B002A5E57 /* prime_numbers.lp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = prime_numbers.lp; sourceTree = "<group>"; };
+		3A3461B0182CB54B002A5E57 /* lua_dll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_dll.c; sourceTree = "<group>"; };
+		3A3461B1182CB54B002A5E57 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		3A3461B2182CB54B002A5E57 /* post.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = post.c; sourceTree = "<group>"; };
+		3A3461B3182CB54B002A5E57 /* ssl_cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl_cert.pem; sourceTree = "<group>"; };
+		3A3461B4182CB54B002A5E57 /* upload.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upload.c; sourceTree = "<group>"; };
+		3A3461B5182CB54B002A5E57 /* websocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = websocket.c; sourceTree = "<group>"; };
+		3A3461B7182CB54B002A5E57 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3A3461B8182CB54B002A5E57 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3A3461B9182CB54B002A5E57 /* mongoose.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mongoose.cpp; sourceTree = "<group>"; };
+		3A3461BA182CB54B002A5E57 /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mongoose.h; sourceTree = "<group>"; };
+		3A3461BB182CB54B002A5E57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		3A3461BD182CB54B002A5E57 /* .leading.dot.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .leading.dot.txt; sourceTree = "<group>"; };
+		3A3461BE182CB54B002A5E57 /* all_build_flags.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = all_build_flags.pl; sourceTree = "<group>"; };
+		3A3461BF182CB54B002A5E57 /* bad.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = bad.cgi; sourceTree = "<group>"; };
+		3A3461C0182CB54B002A5E57 /* bad2.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bad2.cgi; sourceTree = "<group>"; };
+		3A3461C2182CB54B002A5E57 /* hello.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.cgi; sourceTree = "<group>"; };
+		3A3461C4182CB54B002A5E57 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3A3461C5182CB54B002A5E57 /* embed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = embed.c; sourceTree = "<group>"; };
+		3A3461C6182CB54B002A5E57 /* env.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = env.cgi; sourceTree = "<group>"; };
+		3A3461C7182CB54B002A5E57 /* exploit.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = exploit.pl; sourceTree = "<group>"; };
+		3A3461C8182CB54B002A5E57 /* hello.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = hello.cgi; sourceTree = "<group>"; };
+		3A3461C9182CB54B002A5E57 /* hello.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.txt; sourceTree = "<group>"; };
+		3A3461CA182CB54B002A5E57 /* page.lp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = page.lp; sourceTree = "<group>"; };
+		3A3461CB182CB54B002A5E57 /* passfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = passfile; sourceTree = "<group>"; };
+		3A3461CC182CB54B002A5E57 /* sh.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sh.cgi; sourceTree = "<group>"; };
+		3A3461CD182CB54B002A5E57 /* ssi1.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi1.shtml; sourceTree = "<group>"; };
+		3A3461CE182CB54B002A5E57 /* ssi2.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi2.shtml; sourceTree = "<group>"; };
+		3A3461CF182CB54B002A5E57 /* ssi3.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi3.shtml; sourceTree = "<group>"; };
+		3A3461D0182CB54B002A5E57 /* ssi4.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi4.shtml; sourceTree = "<group>"; };
+		3A3461D1182CB54B002A5E57 /* ssi5.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi5.shtml; sourceTree = "<group>"; };
+		3A3461D2182CB54B002A5E57 /* ssi6.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi6.shtml; sourceTree = "<group>"; };
+		3A3461D3182CB54B002A5E57 /* ssi7.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi7.shtml; sourceTree = "<group>"; };
+		3A3461D4182CB54B002A5E57 /* ssi8.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi8.shtml; sourceTree = "<group>"; };
+		3A3461D5182CB54B002A5E57 /* ssi9.shtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.other; path = ssi9.shtml; sourceTree = "<group>"; };
+		3A3461D6182CB54B002A5E57 /* test.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = test.pl; sourceTree = "<group>"; };
+		3A3461D7182CB54B002A5E57 /* timeout.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = timeout.cgi; sourceTree = "<group>"; };
+		3A3461D9182CB54B002A5E57 /* x.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = x.php; sourceTree = "<group>"; };
+		3A34620B182D618F002A5E57 /* unit_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unit_test.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A346162182CB3EC002A5E57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A34615A182CB3C6002A5E57 = {
+			isa = PBXGroup;
+			children = (
+				3A34616F182CB54B002A5E57 /* build */,
+				3A346197182CB54B002A5E57 /* docs */,
+				3A3461A0182CB54B002A5E57 /* examples */,
+				3A3461B8182CB54B002A5E57 /* LICENSE */,
+				3A3461B9182CB54B002A5E57 /* mongoose.cpp */,
+				3A3461BA182CB54B002A5E57 /* mongoose.h */,
+				3A3461BB182CB54B002A5E57 /* README.md */,
+				3A3461BC182CB54B002A5E57 /* test */,
+				3A346166182CB3EC002A5E57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A346166182CB3EC002A5E57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A346165182CB3EC002A5E57 /* mongoose */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A34616F182CB54B002A5E57 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				3A346170182CB54B002A5E57 /* dll.def */,
+				3A346171182CB54B002A5E57 /* Info.plist */,
+				3A346172182CB54B002A5E57 /* jni */,
+				3A346174182CB54B002A5E57 /* lsqlite3.c */,
+				3A346175182CB54B002A5E57 /* lua_5.2.1.c */,
+				3A346176182CB54B002A5E57 /* lua_5.2.1.h */,
+				3A346177182CB54B002A5E57 /* main.cpp */,
+				3A346178182CB54B002A5E57 /* Makefile */,
+				3A346179182CB54B002A5E57 /* mongoose.ai */,
+				3A34617A182CB54B002A5E57 /* mongoose.icns */,
+				3A34617B182CB54B002A5E57 /* mongoose_16x16.png */,
+				3A34617C182CB54B002A5E57 /* mongoose_16x16@2x.png */,
+				3A34617D182CB54B002A5E57 /* mongoose_22x22.png */,
+				3A34617E182CB54B002A5E57 /* mongoose_22x22@2x.png */,
+				3A34617F182CB54B002A5E57 /* mongoose_32x32.png */,
+				3A346180182CB54B002A5E57 /* mongoose_32x32@2x.png */,
+				3A346181182CB54B002A5E57 /* mongoose_64x64.png */,
+				3A346182182CB54B002A5E57 /* mongoose_64x64@2x.png */,
+				3A346183182CB54B002A5E57 /* res.rc */,
+				3A346184182CB54B002A5E57 /* sqlite3.c */,
+				3A346185182CB54B002A5E57 /* sqlite3.h */,
+				3A346186182CB54B002A5E57 /* src */,
+				3A346195182CB54B002A5E57 /* ssl_cert.pem */,
+				3A346196182CB54B002A5E57 /* systray.ico */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		3A346172182CB54B002A5E57 /* jni */ = {
+			isa = PBXGroup;
+			children = (
+				3A346173182CB54B002A5E57 /* Android.mk */,
+			);
+			path = jni;
+			sourceTree = "<group>";
+		};
+		3A346186182CB54B002A5E57 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3A346187182CB54B002A5E57 /* auth.c */,
+				3A346188182CB54B002A5E57 /* crypto.c */,
+				3A346189182CB54B002A5E57 /* http_client.c */,
+				3A34618A182CB54B002A5E57 /* internal.h */,
+				3A34618B182CB54B002A5E57 /* lua.c */,
+				3A34618C182CB54B002A5E57 /* mg_printf.c */,
+				3A34618D182CB54B002A5E57 /* mongoose.c */,
+				3A34618E182CB54B002A5E57 /* options.c */,
+				3A34618F182CB54B002A5E57 /* parse_date.c */,
+				3A346190182CB54B002A5E57 /* ssl.c */,
+				3A346191182CB54B002A5E57 /* string.c */,
+				3A346192182CB54B002A5E57 /* unix.c */,
+				3A346193182CB54B002A5E57 /* util.c */,
+				3A346194182CB54B002A5E57 /* win32.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		3A346197182CB54B002A5E57 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				3A346198182CB54B002A5E57 /* AndroidBuild.md */,
+				3A346199182CB54B002A5E57 /* API.md */,
+				3A34619A182CB54B002A5E57 /* FAQ.md */,
+				3A34619B182CB54B002A5E57 /* Internals.md */,
+				3A34619C182CB54B002A5E57 /* LuaSqlite.md */,
+				3A34619D182CB54B002A5E57 /* Options.md */,
+				3A34619E182CB54B002A5E57 /* SSL.md */,
+				3A34619F182CB54B002A5E57 /* Usage.md */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		3A3461A0182CB54B002A5E57 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461A1182CB54B002A5E57 /* c# */,
+				3A3461A4182CB54B002A5E57 /* chat.c */,
+				3A3461A5182CB54B002A5E57 /* hello.c */,
+				3A3461A6182CB54B002A5E57 /* html */,
+				3A3461AE182CB54B002A5E57 /* lua */,
+				3A3461B0182CB54B002A5E57 /* lua_dll.c */,
+				3A3461B1182CB54B002A5E57 /* Makefile */,
+				3A3461B2182CB54B002A5E57 /* post.c */,
+				3A3461B3182CB54B002A5E57 /* ssl_cert.pem */,
+				3A3461B4182CB54B002A5E57 /* upload.c */,
+				3A3461B5182CB54B002A5E57 /* websocket.c */,
+				3A3461B6182CB54B002A5E57 /* websocket_html_root */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		3A3461A1182CB54B002A5E57 /* c# */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461A2182CB54B002A5E57 /* example.cs */,
+				3A3461A3182CB54B002A5E57 /* mongoose.cs */,
+			);
+			path = "c#";
+			sourceTree = "<group>";
+		};
+		3A3461A6182CB54B002A5E57 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461A7182CB54B002A5E57 /* favicon.ico */,
+				3A3461A8182CB54B002A5E57 /* index.html */,
+				3A3461A9182CB54B002A5E57 /* jquery.js */,
+				3A3461AA182CB54B002A5E57 /* login.html */,
+				3A3461AB182CB54B002A5E57 /* logo.png */,
+				3A3461AC182CB54B002A5E57 /* main.js */,
+				3A3461AD182CB54B002A5E57 /* style.css */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		3A3461AE182CB54B002A5E57 /* lua */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461AF182CB54B002A5E57 /* prime_numbers.lp */,
+			);
+			path = lua;
+			sourceTree = "<group>";
+		};
+		3A3461B6182CB54B002A5E57 /* websocket_html_root */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461B7182CB54B002A5E57 /* index.html */,
+			);
+			path = websocket_html_root;
+			sourceTree = "<group>";
+		};
+		3A3461BC182CB54B002A5E57 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				3A34620B182D618F002A5E57 /* unit_test.cpp */,
+				3A3461BD182CB54B002A5E57 /* .leading.dot.txt */,
+				3A3461BE182CB54B002A5E57 /* all_build_flags.pl */,
+				3A3461BF182CB54B002A5E57 /* bad.cgi */,
+				3A3461C0182CB54B002A5E57 /* bad2.cgi */,
+				3A3461C1182CB54B002A5E57 /* dir with spaces */,
+				3A3461C5182CB54B002A5E57 /* embed.c */,
+				3A3461C6182CB54B002A5E57 /* env.cgi */,
+				3A3461C7182CB54B002A5E57 /* exploit.pl */,
+				3A3461C8182CB54B002A5E57 /* hello.cgi */,
+				3A3461C9182CB54B002A5E57 /* hello.txt */,
+				3A3461CA182CB54B002A5E57 /* page.lp */,
+				3A3461CB182CB54B002A5E57 /* passfile */,
+				3A3461CC182CB54B002A5E57 /* sh.cgi */,
+				3A3461CD182CB54B002A5E57 /* ssi1.shtml */,
+				3A3461CE182CB54B002A5E57 /* ssi2.shtml */,
+				3A3461CF182CB54B002A5E57 /* ssi3.shtml */,
+				3A3461D0182CB54B002A5E57 /* ssi4.shtml */,
+				3A3461D1182CB54B002A5E57 /* ssi5.shtml */,
+				3A3461D2182CB54B002A5E57 /* ssi6.shtml */,
+				3A3461D3182CB54B002A5E57 /* ssi7.shtml */,
+				3A3461D4182CB54B002A5E57 /* ssi8.shtml */,
+				3A3461D5182CB54B002A5E57 /* ssi9.shtml */,
+				3A3461D6182CB54B002A5E57 /* test.pl */,
+				3A3461D7182CB54B002A5E57 /* timeout.cgi */,
+				3A3461D9182CB54B002A5E57 /* x.php */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		3A3461C1182CB54B002A5E57 /* dir with spaces */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461C2182CB54B002A5E57 /* hello.cgi */,
+				3A3461C3182CB54B002A5E57 /* 桌面 */,
+			);
+			path = "dir with spaces";
+			sourceTree = "<group>";
+		};
+		3A3461C3182CB54B002A5E57 /* 桌面 */ = {
+			isa = PBXGroup;
+			children = (
+				3A3461C4182CB54B002A5E57 /* index.html */,
+			);
+			path = "桌面";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A346164182CB3EC002A5E57 /* mongoose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A34616C182CB3EC002A5E57 /* Build configuration list for PBXNativeTarget "mongoose" */;
+			buildPhases = (
+				3A346161182CB3EC002A5E57 /* Sources */,
+				3A346162182CB3EC002A5E57 /* Frameworks */,
+				3A346163182CB3EC002A5E57 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mongoose;
+			productName = mongoose;
+			productReference = 3A346165182CB3EC002A5E57 /* mongoose */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A34615B182CB3C6002A5E57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 3A34615E182CB3C6002A5E57 /* Build configuration list for PBXProject "mongoose" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A34615A182CB3C6002A5E57;
+			productRefGroup = 3A346166182CB3EC002A5E57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A346164182CB3EC002A5E57 /* mongoose */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A346161182CB3EC002A5E57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A34620A182D4787002A5E57 /* main.cpp in Sources */,
+				3A346208182D4763002A5E57 /* mongoose.cpp in Sources */,
+				3A346209182D4763002A5E57 /* mongoose.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A34615F182CB3C6002A5E57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3A346160182CB3C6002A5E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		3A34616D182CB3EC002A5E57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3A34616E182CB3EC002A5E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A34615E182CB3C6002A5E57 /* Build configuration list for PBXProject "mongoose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A34615F182CB3C6002A5E57 /* Debug */,
+				3A346160182CB3C6002A5E57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A34616C182CB3EC002A5E57 /* Build configuration list for PBXNativeTarget "mongoose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A34616D182CB3EC002A5E57 /* Debug */,
+				3A34616E182CB3EC002A5E57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A34615B182CB3C6002A5E57 /* Project object */;
+}
