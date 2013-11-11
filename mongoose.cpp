@@ -69,6 +69,9 @@
 #include <stddef.h>
 #include <stdio.h>
 
+#include "internal.h"
+#include "md5context.h"
+
 #if defined(_WIN32) && !defined(__SYMBIAN32__) // Windows specific
 #undef _WIN32_WINNT
 #define _WIN32_WINNT 0x0400 // To make it link in VS2005
@@ -90,9 +93,6 @@ typedef long off_t;
 #define errno   GetLastError()
 #define strerror(x)  _ultoa(x, (char *) _alloca(sizeof(x) *3 ), 10)
 #endif // _WIN32_WCE
-
-#include "internal.h"
-#include "md5context.h"
 
 #define MAKEUQUAD(lo, hi) ((uint64_t)(((uint32_t)(lo)) | \
       ((uint64_t)((uint32_t)(hi))) << 32))
@@ -841,26 +841,6 @@ static void bin2str(char *to, const unsigned char *p, size_t len) {
   }
   *to = '\0';
 }
-  
-  struct MD5Context {
-    union {
-      uint32_t buf_32[4];
-      unsigned char buf_8[16];
-    };
-    uint32_t bits[2];
-    union {
-      uint32_t in_32[16];
-      unsigned char in_8[64];
-    };
-    
-    MD5Context();
-    void update(unsigned char const *buf, unsigned len);
-    void final(unsigned char digest[16]);
-    
-  private:
-    void transform();
-    void byteReverse(unsigned longs);
-  };
 
 // Return stringified MD5 hash for list of strings. Buffer must be 33 bytes.
 char *mg_md5(char buf[33], ...) {
