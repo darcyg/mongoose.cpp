@@ -70,6 +70,7 @@
 #include <stdio.h>
 
 #include "internal.h"
+#include "Utils.h"
 #include "md5context.h"
 
 #if defined(_WIN32) && !defined(__SYMBIAN32__) // Windows specific
@@ -571,11 +572,6 @@ static int mg_snprintf(char *buf, size_t buflen, const char *fmt, ...) {
 
   return n;
 }
-  
-  static int is_big_endian(void) {
-    static const int n = 1;
-    return ((char *) &n)[0] == 0;
-  }
 
 // Skip the characters until one of the delimiters characters found.
 // 0-terminate resulting word. Skip the delimiter and following whitespaces.

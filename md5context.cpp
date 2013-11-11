@@ -7,15 +7,11 @@
 //
 
 #include "md5context.h"
+#include "Utils.h"
 
 #include <string.h>
 
 namespace mongoose {
-  static int is_big_endian(void) {
-    static const int n = 1;
-    return ((char *) &n)[0] == 0;
-  }
-  
   MD5Context::MD5Context() {
     buf_32[0] = 0x67452301;
     buf_32[1] = 0xefcdab89;

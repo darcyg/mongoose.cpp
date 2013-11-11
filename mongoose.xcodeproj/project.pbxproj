@@ -17,6 +17,8 @@
 		3A346220183139DA002A5E57 /* md5context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* md5context.cpp */; };
 		3A346222183141C9002A5E57 /* md5context.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621E183139DA002A5E57 /* md5context.h */; };
 		3A346223183141C9002A5E57 /* internal.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622118313A82002A5E57 /* internal.h */; };
+		3A34622618314B88002A5E57 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622418314B88002A5E57 /* Utils.cpp */; };
+		3A34622718314B88002A5E57 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622418314B88002A5E57 /* Utils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -144,6 +146,8 @@
 		3A34621D183139DA002A5E57 /* md5context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5context.cpp; sourceTree = "<group>"; };
 		3A34621E183139DA002A5E57 /* md5context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5context.h; sourceTree = "<group>"; };
 		3A34622118313A82002A5E57 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		3A34622418314B88002A5E57 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		3A34622518314B88002A5E57 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 			children = (
 				3A34621D183139DA002A5E57 /* md5context.cpp */,
 				3A34621E183139DA002A5E57 /* md5context.h */,
+				3A34622418314B88002A5E57 /* Utils.cpp */,
+				3A34622518314B88002A5E57 /* Utils.h */,
 				3A34622118313A82002A5E57 /* internal.h */,
 				3A34616F182CB54B002A5E57 /* build */,
 				3A346197182CB54B002A5E57 /* docs */,
@@ -455,6 +461,7 @@
 				3A34620A182D4787002A5E57 /* main.cpp in Sources */,
 				3A346208182D4763002A5E57 /* mongoose.cpp in Sources */,
 				3A34621F183139DA002A5E57 /* md5context.cpp in Sources */,
+				3A34622618314B88002A5E57 /* Utils.cpp in Sources */,
 				3A346209182D4763002A5E57 /* mongoose.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A346222183141C9002A5E57 /* md5context.h in Sources */,
+				3A34622718314B88002A5E57 /* Utils.cpp in Sources */,
 				3A346223183141C9002A5E57 /* internal.h in Sources */,
 				3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */,
 				3A346220183139DA002A5E57 /* md5context.cpp in Sources */,
