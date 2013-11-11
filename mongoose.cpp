@@ -841,6 +841,26 @@ static void bin2str(char *to, const unsigned char *p, size_t len) {
   }
   *to = '\0';
 }
+  
+  struct MD5Context {
+    union {
+      uint32_t buf_32[4];
+      unsigned char buf_8[16];
+    };
+    uint32_t bits[2];
+    union {
+      uint32_t in_32[16];
+      unsigned char in_8[64];
+    };
+    
+    MD5Context();
+    void update(unsigned char const *buf, unsigned len);
+    void final(unsigned char digest[16]);
+    
+  private:
+    void transform();
+    void byteReverse(unsigned longs);
+  };
 
 // Return stringified MD5 hash for list of strings. Buffer must be 33 bytes.
 char *mg_md5(char buf[33], ...) {
