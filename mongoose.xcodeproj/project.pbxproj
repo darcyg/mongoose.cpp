@@ -10,6 +10,13 @@
 		3A346208182D4763002A5E57 /* mongoose.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461B9182CB54B002A5E57 /* mongoose.cpp */; };
 		3A346209182D4763002A5E57 /* mongoose.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461BA182CB54B002A5E57 /* mongoose.h */; };
 		3A34620A182D4787002A5E57 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A346177182CB54B002A5E57 /* main.cpp */; };
+		3A34621618312D1D002A5E57 /* mongoose_test.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A34621518312D1D002A5E57 /* mongoose_test.1 */; };
+		3A34621B18312D3D002A5E57 /* mongoose.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461BA182CB54B002A5E57 /* mongoose.h */; };
+		3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34620B182D618F002A5E57 /* unit_test.cpp */; };
+		3A34621F183139DA002A5E57 /* md5context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* md5context.cpp */; };
+		3A346220183139DA002A5E57 /* md5context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* md5context.cpp */; };
+		3A346222183141C9002A5E57 /* md5context.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621E183139DA002A5E57 /* md5context.h */; };
+		3A346223183141C9002A5E57 /* internal.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622118313A82002A5E57 /* internal.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +26,16 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3A34620F18312D1D002A5E57 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				3A34621618312D1D002A5E57 /* mongoose_test.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -121,10 +138,23 @@
 		3A3461D7182CB54B002A5E57 /* timeout.cgi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = timeout.cgi; sourceTree = "<group>"; };
 		3A3461D9182CB54B002A5E57 /* x.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = x.php; sourceTree = "<group>"; };
 		3A34620B182D618F002A5E57 /* unit_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unit_test.cpp; sourceTree = "<group>"; };
+		3A34621118312D1D002A5E57 /* mongoose-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mongoose-test"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A34621318312D1D002A5E57 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3A34621518312D1D002A5E57 /* mongoose_test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mongoose_test.1; sourceTree = "<group>"; };
+		3A34621D183139DA002A5E57 /* md5context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5context.cpp; sourceTree = "<group>"; };
+		3A34621E183139DA002A5E57 /* md5context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5context.h; sourceTree = "<group>"; };
+		3A34622118313A82002A5E57 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3A346162182CB3EC002A5E57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A34620E18312D1D002A5E57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,6 +167,9 @@
 		3A34615A182CB3C6002A5E57 = {
 			isa = PBXGroup;
 			children = (
+				3A34621D183139DA002A5E57 /* md5context.cpp */,
+				3A34621E183139DA002A5E57 /* md5context.h */,
+				3A34622118313A82002A5E57 /* internal.h */,
 				3A34616F182CB54B002A5E57 /* build */,
 				3A346197182CB54B002A5E57 /* docs */,
 				3A3461A0182CB54B002A5E57 /* examples */,
@@ -145,6 +178,7 @@
 				3A3461BA182CB54B002A5E57 /* mongoose.h */,
 				3A3461BB182CB54B002A5E57 /* README.md */,
 				3A3461BC182CB54B002A5E57 /* test */,
+				3A34621218312D1D002A5E57 /* mongoose-test */,
 				3A346166182CB3EC002A5E57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3A346165182CB3EC002A5E57 /* mongoose */,
+				3A34621118312D1D002A5E57 /* mongoose-test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +375,15 @@
 			path = "桌面";
 			sourceTree = "<group>";
 		};
+		3A34621218312D1D002A5E57 /* mongoose-test */ = {
+			isa = PBXGroup;
+			children = (
+				3A34621318312D1D002A5E57 /* main.cpp */,
+				3A34621518312D1D002A5E57 /* mongoose_test.1 */,
+			);
+			path = "mongoose-test";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,6 +402,23 @@
 			name = mongoose;
 			productName = mongoose;
 			productReference = 3A346165182CB3EC002A5E57 /* mongoose */;
+			productType = "com.apple.product-type.tool";
+		};
+		3A34621018312D1D002A5E57 /* mongoose-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A34621718312D1D002A5E57 /* Build configuration list for PBXNativeTarget "mongoose-test" */;
+			buildPhases = (
+				3A34620D18312D1D002A5E57 /* Sources */,
+				3A34620E18312D1D002A5E57 /* Frameworks */,
+				3A34620F18312D1D002A5E57 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mongoose-test";
+			productName = "mongoose-test";
+			productReference = 3A34621118312D1D002A5E57 /* mongoose-test */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -381,6 +442,7 @@
 			projectRoot = "";
 			targets = (
 				3A346164182CB3EC002A5E57 /* mongoose */,
+				3A34621018312D1D002A5E57 /* mongoose-test */,
 			);
 		};
 /* End PBXProject section */
@@ -392,7 +454,20 @@
 			files = (
 				3A34620A182D4787002A5E57 /* main.cpp in Sources */,
 				3A346208182D4763002A5E57 /* mongoose.cpp in Sources */,
+				3A34621F183139DA002A5E57 /* md5context.cpp in Sources */,
 				3A346209182D4763002A5E57 /* mongoose.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A34620D18312D1D002A5E57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A346222183141C9002A5E57 /* md5context.h in Sources */,
+				3A346223183141C9002A5E57 /* internal.h in Sources */,
+				3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */,
+				3A346220183139DA002A5E57 /* md5context.cpp in Sources */,
+				3A34621B18312D3D002A5E57 /* mongoose.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +556,84 @@
 			};
 			name = Release;
 		};
+		3A34621818312D1D002A5E57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/*",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3A34621918312D1D002A5E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/*",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -501,6 +654,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3A34621718312D1D002A5E57 /* Build configuration list for PBXNativeTarget "mongoose-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A34621818312D1D002A5E57 /* Debug */,
+				3A34621918312D1D002A5E57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

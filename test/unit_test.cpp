@@ -10,7 +10,7 @@
 
 // USE_* definitions must be made before #include "mongoose.c" !
 
-#include "mongoose.cpp"
+#include "../mongoose.cpp"
 
 using namespace mongoose;
 
@@ -684,7 +684,7 @@ int __cdecl main(void) {
   test_remove_double_dots();
   test_parse_http_message();
   test_should_keep_alive();
-  test_mg_download();
+  //test_mg_download();
   test_mg_get_var();
   test_set_throttle();
   test_next_option();
