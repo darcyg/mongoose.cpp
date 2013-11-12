@@ -26,8 +26,7 @@
 //#endif // __cplusplus
 
 namespace mongoose {
-struct mg_context;     // Web server instance
-struct mg_connection;  // HTTP request descriptor
+
 
 
 // This structure contains information about the HTTP request.
