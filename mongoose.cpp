@@ -71,7 +71,7 @@
 
 #include "internal.h"
 #include "Utils.h"
-#include "md5context.h"
+#include "MD5context.h"
 
 #if defined(_WIN32) && !defined(__SYMBIAN32__) // Windows specific
 #undef _WIN32_WINNT

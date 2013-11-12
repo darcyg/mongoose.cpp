@@ -31,7 +31,7 @@ SOURCES = src/internal.h src/util.c src/string.c src/parse_date.c \
           src/mg_printf.c src/ssl.c src/http_client.c \
           src/mongoose.c src/lua.c
 
-TINY_SOURCES = ../mongoose.cpp main.cpp ../md5context.cpp
+TINY_SOURCES = ../mongoose.cpp main.cpp ../MD5context.cpp ../Utils.cpp
 LUA_SOURCES = $(TINY_SOURCES) sqlite3.c lsqlite3.c lua_5.2.1.c
 
 SQLITE_FLAGS = -DTHREADSAFE=1 -DSQLITE_ENABLE_FTS3 \
