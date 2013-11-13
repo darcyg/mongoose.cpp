@@ -86,7 +86,7 @@ static void test_parse_http_message() {
 }
 
 static void test_should_keep_alive(void) {
-  struct mg_connection conn;
+  struct Connection conn;
   struct mg_context ctx;
   char req1[] = "GET / HTTP/1.1\r\n\r\n";
   char req2[] = "GET / HTTP/1.0\r\n\r\n";
@@ -193,7 +193,7 @@ static char *read_file(const char *path, int *size) {
 static const char *fetch_data = "hello world!\n";
 static const char *upload_ok_message = "upload successful";
 
-static void test_upload(struct mg_connection *conn, const char *orig_path,
+static void test_upload(struct Connection *conn, const char *orig_path,
                         const char *uploaded_path) {
   int len1, len2;
   char path[500], *p1, *p2;
@@ -257,7 +257,7 @@ static const char *OPTIONS[] = {
   NULL,
 };
 
-static char *read_conn(struct mg_connection *conn, int *size) {
+static char *read_conn(struct Connection *conn, int *size) {
   char buf[MG_BUF_LEN], *data = NULL;
   int len;
   *size = 0;
@@ -272,7 +272,7 @@ static char *read_conn(struct mg_connection *conn, int *size) {
 static void test_mg_download(void) {
   char *p1, *p2, ebuf[100];
   int len1, len2, port = atoi(HTTPS_PORT);
-  struct mg_connection *conn;
+  struct Connection *conn;
   struct mg_context *ctx;
 
   ASSERT((ctx = mg_start(OPTIONS, event_handler, NULL)) != NULL);
@@ -343,7 +343,7 @@ static int alloc_printf(char **buf, size_t size, char *fmt, ...) {
 static void test_mg_upload(void) {
   static const char *boundary = "OOO___MY_BOUNDARY___OOO";
   struct mg_context *ctx;
-  struct mg_connection *conn;
+  struct Connection *conn;
   char ebuf[100], buf[20], *file_data, *file2_data, *post_data;
   int file_len, file2_len, post_data_len;
 
@@ -460,7 +460,7 @@ static void check_lua_expr(lua_State *L, const char *expr, const char *value) {
 }
 
 static void test_lua(void) {
-  static struct mg_connection conn;
+  static struct Connection conn;
   static struct mg_context ctx;
 
   char http_request[] = "POST /foo/bar HTTP/1.1\r\n"
@@ -532,7 +532,7 @@ static void test_alloc_vprintf(void) {
 static void test_request_replies(void) {
   char ebuf[100];
   int i, port = atoi(HTTPS_PORT);
-  struct mg_connection *conn;
+  struct Connection *conn;
   struct mg_context *ctx;
   static struct { const char *request, *reply_regex; } tests[] = {
     {
@@ -577,7 +577,7 @@ static int api_cb(struct mg_event *event) {
 
 static void test_api_calls(void) {
   char ebuf[100];
-  struct mg_connection *conn;
+  struct Connection *conn;
   struct mg_context *ctx;
   static const char *fmt = "POST %s HTTP/1.0\r\n"
     "Host:  blah.com\n"     // More spaces before

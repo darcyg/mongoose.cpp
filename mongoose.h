@@ -60,7 +60,7 @@ struct mg_event {
   void *conn_data;            // Connection-specific, per-thread user data.
   void *event_param;          // Event-specific parameter
 
-  struct mg_connection *conn;
+  struct Connection *conn;
   struct mg_request_info *request_info;
 };
 
@@ -70,9 +70,9 @@ struct mg_context *mg_start(const char **configuration_options,
                             mg_event_handler_t func, void *user_data);
 void mg_stop(struct mg_context *);
 
-void mg_websocket_handshake(struct mg_connection *);
-int mg_websocket_read(struct mg_connection *, int *bits, char **data);
-int mg_websocket_write(struct mg_connection* conn, int opcode,
+void mg_websocket_handshake(struct Connection *);
+int mg_websocket_read(struct Connection *, int *bits, char **data);
+int mg_websocket_write(struct Connection* conn, int opcode,
                        const char *data, size_t data_len);
 // Websocket opcodes, from http://tools.ietf.org/html/rfc6455
 enum {
@@ -90,7 +90,7 @@ int mg_modify_passwords_file(const char *passwords_file_name,
                              const char *domain,
                              const char *user,
                              const char *password);
-int mg_write(struct mg_connection *, const void *buf, int len);
+int mg_write(struct Connection *, const void *buf, int len);
 
 // Macros for enabling compiler-specific checks for printf-like arguments.
 #undef PRINTF_FORMAT_STRING
@@ -114,12 +114,12 @@ int mg_write(struct mg_connection *, const void *buf, int len);
 // Send data to the client using printf() semantics.
 //
 // Works exactly like mg_write(), but allows to do message formatting.
-int mg_printf(struct mg_connection *,
+int mg_printf(struct Connection *,
               PRINTF_FORMAT_STRING(const char *fmt), ...) PRINTF_ARGS(2, 3);
 
 
 // Send contents of the entire file together with HTTP headers.
-void mg_send_file(struct mg_connection *conn, const char *path);
+void mg_send_file(struct Connection *conn, const char *path);
 
 
 // Read data from the remote end, return number of bytes read.
@@ -127,7 +127,7 @@ void mg_send_file(struct mg_connection *conn, const char *path);
 //   0     connection has been closed by peer. No more data could be read.
 //   < 0   read error. No more data could be read from the connection.
 //   > 0   number of bytes read into the buffer.
-int mg_read(struct mg_connection *, void *buf, int len);
+int mg_read(struct Connection *, void *buf, int len);
 
 
 // Get the value of particular HTTP header.
@@ -135,7 +135,7 @@ int mg_read(struct mg_connection *, void *buf, int len);
 // This is a helper function. It traverses request_info->http_headers array,
 // and if the header is present in the array, returns its value. If it is
 // not present, NULL is returned.
-const char *mg_get_header(const struct mg_connection *, const char *name);
+const char *mg_get_header(const struct Connection *, const char *name);
 
 
 // Get a value of particular form variable.
@@ -188,17 +188,17 @@ int mg_get_cookie(const char *cookie, const char *var_name,
 //   On error, NULL. error_buffer contains error message.
 // Example:
 //   char ebuf[100];
-//   struct mg_connection *conn;
+//   struct Connection *conn;
 //   conn = mg_download("google.com", 80, 0, ebuf, sizeof(ebuf),
 //                      "%s", "GET / HTTP/1.0\r\nHost: google.com\r\n\r\n");
-struct mg_connection *mg_download(const char *host, int port, int use_ssl,
+struct Connection *mg_download(const char *host, int port, int use_ssl,
                                   char *error_buffer, size_t error_buffer_size,
                                   PRINTF_FORMAT_STRING(const char *request_fmt),
                                   ...) PRINTF_ARGS(6, 7);
 
 
 // Close the connection opened by mg_download().
-void mg_close_connection(struct mg_connection *conn);
+void mg_close_connection(struct Connection *conn);
 
 
 // Read multipart-form-data POST buffer, save uploaded files into
@@ -206,7 +206,7 @@ void mg_close_connection(struct mg_connection *conn);
 // This function can be called multiple times for the same connection,
 // if more then one file is uploaded.
 // Return: path to the uploaded file, or NULL if there are no more files.
-FILE *mg_upload(struct mg_connection *conn, const char *destination_dir,
+FILE *mg_upload(struct Connection *conn, const char *destination_dir,
                 char *path, int path_len);
 
 
