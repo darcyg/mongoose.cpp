@@ -13,9 +13,9 @@
 		3A34621618312D1D002A5E57 /* mongoose_test.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A34621518312D1D002A5E57 /* mongoose_test.1 */; };
 		3A34621B18312D3D002A5E57 /* mongoose.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A3461BA182CB54B002A5E57 /* mongoose.h */; };
 		3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34620B182D618F002A5E57 /* unit_test.cpp */; };
-		3A34621F183139DA002A5E57 /* MD5context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* MD5context.cpp */; };
-		3A346220183139DA002A5E57 /* MD5context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* MD5context.cpp */; };
-		3A346222183141C9002A5E57 /* MD5context.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621E183139DA002A5E57 /* MD5context.h */; };
+		3A34621F183139DA002A5E57 /* MD5Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* MD5Context.cpp */; };
+		3A346220183139DA002A5E57 /* MD5Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621D183139DA002A5E57 /* MD5Context.cpp */; };
+		3A346222183141C9002A5E57 /* MD5Context.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34621E183139DA002A5E57 /* MD5Context.h */; };
 		3A346223183141C9002A5E57 /* internal.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622118313A82002A5E57 /* internal.h */; };
 		3A34622618314B88002A5E57 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622418314B88002A5E57 /* Utils.cpp */; };
 		3A34622718314B88002A5E57 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622418314B88002A5E57 /* Utils.cpp */; };
@@ -145,8 +145,8 @@
 		3A34621118312D1D002A5E57 /* mongoose-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mongoose-test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A34621318312D1D002A5E57 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3A34621518312D1D002A5E57 /* mongoose_test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mongoose_test.1; sourceTree = "<group>"; };
-		3A34621D183139DA002A5E57 /* MD5context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD5context.cpp; sourceTree = "<group>"; };
-		3A34621E183139DA002A5E57 /* MD5context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5context.h; sourceTree = "<group>"; };
+		3A34621D183139DA002A5E57 /* MD5Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD5Context.cpp; sourceTree = "<group>"; };
+		3A34621E183139DA002A5E57 /* MD5Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Context.h; sourceTree = "<group>"; };
 		3A34622118313A82002A5E57 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
 		3A34622418314B88002A5E57 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		3A34622518314B88002A5E57 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				3A34622118313A82002A5E57 /* internal.h */,
-				3A34621D183139DA002A5E57 /* MD5context.cpp */,
-				3A34621E183139DA002A5E57 /* MD5context.h */,
+				3A34621D183139DA002A5E57 /* MD5Context.cpp */,
+				3A34621E183139DA002A5E57 /* MD5Context.h */,
 				3A34622418314B88002A5E57 /* Utils.cpp */,
 				3A34622518314B88002A5E57 /* Utils.h */,
 				3A34622818328AED002A5E57 /* Connection.cpp */,
@@ -466,7 +466,7 @@
 			files = (
 				3A34620A182D4787002A5E57 /* main.cpp in Sources */,
 				3A346208182D4763002A5E57 /* mongoose.cpp in Sources */,
-				3A34621F183139DA002A5E57 /* MD5context.cpp in Sources */,
+				3A34621F183139DA002A5E57 /* MD5Context.cpp in Sources */,
 				3A34622A18328AED002A5E57 /* Connection.cpp in Sources */,
 				3A34622618314B88002A5E57 /* Utils.cpp in Sources */,
 				3A346209182D4763002A5E57 /* mongoose.h in Sources */,
@@ -477,12 +477,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A346222183141C9002A5E57 /* MD5context.h in Sources */,
+				3A346222183141C9002A5E57 /* MD5Context.h in Sources */,
 				3A34622718314B88002A5E57 /* Utils.cpp in Sources */,
 				3A346223183141C9002A5E57 /* internal.h in Sources */,
 				3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */,
 				3A34622B18328AED002A5E57 /* Connection.cpp in Sources */,
-				3A346220183139DA002A5E57 /* MD5context.cpp in Sources */,
+				3A346220183139DA002A5E57 /* MD5Context.cpp in Sources */,
 				3A34621B18312D3D002A5E57 /* mongoose.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

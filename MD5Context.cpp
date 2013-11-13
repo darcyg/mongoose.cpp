@@ -6,7 +6,7 @@
 //
 //
 
-#include "MD5context.h"
+#include "MD5Context.h"
 #include "Utils.h"
 
 #include <string.h>

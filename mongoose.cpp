@@ -17,7 +17,7 @@
 
 #include "internal.h"
 #include "Utils.h"
-#include "MD5context.h"
+#include "MD5Context.h"
 
 namespace mongoose {
 
