@@ -9,6 +9,7 @@
 #ifndef __mongoose__Utils__
 #define __mongoose__Utils__
 
+#include <iostream>
 #include "internal.h"
 
 namespace mongoose {
@@ -83,7 +84,15 @@ namespace mongoose {
     pthread_cond_t sq_empty;   // Signaled when socket is consumed
   };
   
-  int is_big_endian(void);  
+  int is_big_endian(void);
+  void mg_strlcpy(register char *dst, register const char *src, size_t n);
+  int lowercase(const char *s);
+  int mg_strncasecmp(const char *s1, const char *s2, size_t len);
+  int mg_strcasecmp(const char *s1, const char *s2);
+  char * mg_strndup(const char *ptr, size_t len);
+  char * mg_strdup(const char *str);
+  const char *mg_strcasestr(const char *big_str, const char *small_str);
+  const char *mg_get_builtin_mime_type(std::string const & path);
 }
 
 #endif /* defined(__mongoose__Utils__) */

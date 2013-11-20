@@ -15,6 +15,7 @@
 // Alternatively, you can license this library under a commercial
 // license, as set out in <http://cesanta.com/products.html>.
 
+#include <iostream>
 #include "internal.h"
 #include "Utils.h"
 #include "MD5Context.h"
@@ -52,64 +53,6 @@ static struct Connection *fc(struct mg_context *ctx) {
   // See https://github.com/cesanta/mongoose/issues/236
   fake_connection.event.user_data = ctx->user_data;
   return &fake_connection;
-}
-
-static void mg_strlcpy(register char *dst, register const char *src, size_t n) {
-  for (; *src != '\0' && n > 1; n--) {
-    *dst++ = *src++;
-  }
-  *dst = '\0';
-}
-
-static int lowercase(const char *s) {
-  return tolower(* (const unsigned char *) s);
-}
-
-static int mg_strncasecmp(const char *s1, const char *s2, size_t len) {
-  int diff = 0;
-
-  if (len > 0)
-    do {
-      diff = lowercase(s1++) - lowercase(s2++);
-    } while (diff == 0 && s1[-1] != '\0' && --len > 0);
-
-  return diff;
-}
-
-static int mg_strcasecmp(const char *s1, const char *s2) {
-  int diff;
-
-  do {
-    diff = lowercase(s1++) - lowercase(s2++);
-  } while (diff == 0 && s1[-1] != '\0');
-
-  return diff;
-}
-
-static char * mg_strndup(const char *ptr, size_t len) {
-  char *p;
-
-  if ((p = (char *) malloc(len + 1)) != NULL) {
-    mg_strlcpy(p, ptr, len + 1);
-  }
-
-  return p;
-}
-
-static char * mg_strdup(const char *str) {
-  return mg_strndup(str, strlen(str));
-}
-
-static const char *mg_strcasestr(const char *big_str, const char *small_str) {
-  int i, big_len = strlen(big_str), small_len = strlen(small_str);
-
-  for (i = 0; i <= big_len - small_len; i++) {
-    if (mg_strncasecmp(big_str + i, small_str, small_len) == 0) {
-      return big_str + i;
-    }
-  }
-
-  return NULL;
 }
 
 // Like snprintf(), but never returns negative value, or a value
@@ -2069,77 +2012,7 @@ static void remove_double_dots_and_double_slashes(char *s) {
   *p = '\0';
 }
 
-static const struct {
-  const char *extension;
-  size_t ext_len;
-  const char *mime_type;
-} builtin_mime_types[] = {
-  {".html", 5, "text/html"},
-  {".htm", 4, "text/html"},
-  {".shtm", 5, "text/html"},
-  {".shtml", 6, "text/html"},
-  {".css", 4, "text/css"},
-  {".js",  3, "application/x-javascript"},
-  {".ico", 4, "image/x-icon"},
-  {".gif", 4, "image/gif"},
-  {".jpg", 4, "image/jpeg"},
-  {".jpeg", 5, "image/jpeg"},
-  {".png", 4, "image/png"},
-  {".svg", 4, "image/svg+xml"},
-  {".txt", 4, "text/plain"},
-  {".torrent", 8, "application/x-bittorrent"},
-  {".wav", 4, "audio/x-wav"},
-  {".mp3", 4, "audio/x-mp3"},
-  {".mid", 4, "audio/mid"},
-  {".m3u", 4, "audio/x-mpegurl"},
-  {".ogg", 4, "application/ogg"},
-  {".ram", 4, "audio/x-pn-realaudio"},
-  {".xml", 4, "text/xml"},
-  {".json",  5, "text/json"},
-  {".xslt", 5, "application/xml"},
-  {".xsl", 4, "application/xml"},
-  {".ra",  3, "audio/x-pn-realaudio"},
-  {".doc", 4, "application/msword"},
-  {".exe", 4, "application/octet-stream"},
-  {".zip", 4, "application/x-zip-compressed"},
-  {".xls", 4, "application/excel"},
-  {".tgz", 4, "application/x-tar-gz"},
-  {".tar", 4, "application/x-tar"},
-  {".gz",  3, "application/x-gunzip"},
-  {".arj", 4, "application/x-arj-compressed"},
-  {".rar", 4, "application/x-arj-compressed"},
-  {".rtf", 4, "application/rtf"},
-  {".pdf", 4, "application/pdf"},
-  {".swf", 4, "application/x-shockwave-flash"},
-  {".mpg", 4, "video/mpeg"},
-  {".webm", 5, "video/webm"},
-  {".mpeg", 5, "video/mpeg"},
-  {".mov", 4, "video/quicktime"},
-  {".mp4", 4, "video/mp4"},
-  {".m4v", 4, "video/x-m4v"},
-  {".asf", 4, "video/x-ms-asf"},
-  {".avi", 4, "video/x-msvideo"},
-  {".bmp", 4, "image/bmp"},
-  {".ttf", 4, "application/x-font-ttf"},
-  {NULL,  0, NULL}
-};
 
-const char *mg_get_builtin_mime_type(const char *path) {
-  const char *ext;
-  size_t i, path_len;
-
-  path_len = strlen(path);
-
-  for (i = 0; builtin_mime_types[i].extension != NULL; i++) {
-    ext = path + (path_len - builtin_mime_types[i].ext_len);
-    if (path_len > builtin_mime_types[i].ext_len &&
-        mg_strcasecmp(ext, builtin_mime_types[i].extension) == 0) {
-      return builtin_mime_types[i].mime_type;
-    }
-  }
-
-  return "text/plain";
-}
 
 // Look at the "path" extension and figure what mime type it has.
 // Store mime type in the vector.
@@ -2163,7 +2036,7 @@ static void get_mime_type(struct mg_context *ctx, const char *path,
     }
   }
 
-  vec->ptr = mg_get_builtin_mime_type(path);
+  vec->ptr = mg_get_builtin_mime_type(std::string(path));
   vec->len = strlen(vec->ptr);
 }
 
