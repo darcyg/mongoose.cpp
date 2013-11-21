@@ -21,6 +21,8 @@
 		3A34622718314B88002A5E57 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622418314B88002A5E57 /* Utils.cpp */; };
 		3A34622A18328AED002A5E57 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622818328AED002A5E57 /* Connection.cpp */; };
 		3A34622B18328AED002A5E57 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622818328AED002A5E57 /* Connection.cpp */; };
+		3A34622E183E42CD002A5E57 /* SHA1Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622C183E42CD002A5E57 /* SHA1Context.cpp */; };
+		3A34622F183E4FFD002A5E57 /* SHA1Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A34622C183E42CD002A5E57 /* SHA1Context.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +154,8 @@
 		3A34622518314B88002A5E57 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		3A34622818328AED002A5E57 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Connection.cpp; sourceTree = "<group>"; };
 		3A34622918328AED002A5E57 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		3A34622C183E42CD002A5E57 /* SHA1Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SHA1Context.cpp; sourceTree = "<group>"; };
+		3A34622D183E42CD002A5E57 /* SHA1Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHA1Context.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 		3A34615A182CB3C6002A5E57 = {
 			isa = PBXGroup;
 			children = (
+				3A34622C183E42CD002A5E57 /* SHA1Context.cpp */,
+				3A34622D183E42CD002A5E57 /* SHA1Context.h */,
 				3A34622118313A82002A5E57 /* internal.h */,
 				3A34621D183139DA002A5E57 /* MD5Context.cpp */,
 				3A34621E183139DA002A5E57 /* MD5Context.h */,
@@ -465,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A34620A182D4787002A5E57 /* main.cpp in Sources */,
+				3A34622E183E42CD002A5E57 /* SHA1Context.cpp in Sources */,
 				3A346208182D4763002A5E57 /* mongoose.cpp in Sources */,
 				3A34621F183139DA002A5E57 /* MD5Context.cpp in Sources */,
 				3A34622A18328AED002A5E57 /* Connection.cpp in Sources */,
@@ -479,6 +486,7 @@
 			files = (
 				3A346222183141C9002A5E57 /* MD5Context.h in Sources */,
 				3A34622718314B88002A5E57 /* Utils.cpp in Sources */,
+				3A34622F183E4FFD002A5E57 /* SHA1Context.cpp in Sources */,
 				3A346223183141C9002A5E57 /* internal.h in Sources */,
 				3A34621C18312D42002A5E57 /* unit_test.cpp in Sources */,
 				3A34622B18328AED002A5E57 /* Connection.cpp in Sources */,
@@ -678,6 +686,7 @@
 				3A34621918312D1D002A5E57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
