@@ -3288,6 +3288,8 @@ static void handle_propfind(struct Connection *conn, const char *path,
   conn->num_bytes_sent += mg_printf(conn, "%s\n", "</d:multistatus>");
 }
 
+    
+#pragma mark - use websocket start
 #define USE_WEBSOCKET
 #if defined(USE_WEBSOCKET)
 
@@ -3467,6 +3469,8 @@ int mg_websocket_write(struct Connection* conn, int opcode,
     return retval;
 }
 #endif // !USE_WEBSOCKET
+#pragma mark use websocket end
+#pragma mark -
 
 static int isbyte(int n) {
   return n >= 0 && n <= 255;

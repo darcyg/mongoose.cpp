@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E4234FEC-97F8-4512-85DC-64EF95938D1B</string>
+	<string>32EEA169-E1C8-4060-B027-419BAD62864D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>mongoose</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>934179FF-A6A1-461F-BF99-D0E951FE3A19</key>
-		<string>https://github.com/cesanta/mongoose</string>
+		<key>95F33DB9-598B-444F-91A4-A3265431CEB6</key>
+		<string>ssh://github.com/yayugu/mongoose.cpp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>mongoose.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>934179FF-A6A1-461F-BF99-D0E951FE3A19</key>
+		<key>95F33DB9-598B-444F-91A4-A3265431CEB6</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/cesanta/mongoose</string>
+	<string>ssh://github.com/yayugu/mongoose.cpp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>934179FF-A6A1-461F-BF99-D0E951FE3A19</string>
+	<string>95F33DB9-598B-444F-91A4-A3265431CEB6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>934179FF-A6A1-461F-BF99-D0E951FE3A19</string>
+			<string>95F33DB9-598B-444F-91A4-A3265431CEB6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>mongoose</string>
 		</dict>
