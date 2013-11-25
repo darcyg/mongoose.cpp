@@ -170,10 +170,10 @@ static void process_command_line_arguments(const vector<string>& args, map<strin
     // Handle command line flags.
     // They override config file and default settings.
     for (i = cmd_line_opts_start; i < args.size(); i += 2) {
-      if (args[i][0] != '-' || i + 1 < args.size()) {
+      if (args[i][0] != '-' || i + 1 >= args.size()) {
         show_usage_and_exit();
       }
-      options[args[i]] = options[args[i + 1]];
+      options[args[i].substr(1, string::npos)] = args[i + 1];
     }
   }
 }
@@ -200,15 +200,15 @@ static int is_path_absolute(const char *path) {
 #endif
 }
 
-static void verify_existence(map<string, string>& options, const char *option_name,
+static void verify_existence(const map<string, string>& options, const char *option_name,
                              int must_be_dir) {
   struct stat st;
 
-  if (options.count(option_name) != 0 && (stat(options[option_name].c_str(), &st) != 0 ||
+  if (options.count(option_name) != 0 && (stat(options.at(option_name).c_str(), &st) != 0 ||
                        ((S_ISDIR(st.st_mode) ? 1 : 0) != must_be_dir))) {
     die("Invalid path for %s: [%s]: (%s). Make sure that path is either "
         "absolute, or it is relative to mongoose executable.",
-        option_name, options[option_name].c_str(), strerror(errno));
+        option_name, options.at(option_name).c_str(), strerror(errno));
   }
 }
 
@@ -235,7 +235,6 @@ static void set_absolute_path(map<string, string>& options, const char *option_n
 
     // Absolutize the path, and set the option
     abs_path(path, abs, sizeof(abs));
-    options[option_name] = abs;
   }
 }
 
@@ -246,7 +245,7 @@ static void start_mongoose(int argc, char *argv[]) {
   }
   
   // Edit passwords file if -A option is specified
-  if (args.size() > 1 && args[1].find("-A") == 0) {
+  if (args.size() >= 2 && args[1].find("-A") == 0) {
     if (args.size() != 6) {
       show_usage_and_exit();
     }
@@ -260,7 +259,7 @@ static void start_mongoose(int argc, char *argv[]) {
   }
 
   map<string, string> options;
-  options["document_roor"] = ".";
+  options["document_root"] = ".";
 
   // Update config based on command line arguments
   process_command_line_arguments(args, options);
