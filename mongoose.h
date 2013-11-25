@@ -20,6 +20,8 @@
 
 #include <stdio.h>
 #include <stddef.h>
+#include <string>
+#include <map>
 
 namespace mongoose {
 
@@ -62,7 +64,7 @@ namespace mongoose {
   
   typedef int (*mg_event_handler_t)(struct mg_event *event);
   
-  struct mg_context *mg_start(const char **configuration_options,
+  struct mg_context *mg_start(const std::map<std::string, std::string>& configuration_options,
                               mg_event_handler_t func, void *user_data);
   void mg_stop(struct mg_context *);
   

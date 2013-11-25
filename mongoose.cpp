@@ -4443,11 +4443,11 @@ void mg_stop(struct mg_context *ctx) {
 #endif // _WIN32
 }
 
-struct mg_context *mg_start(const char **options,
+struct mg_context *mg_start(const std::map<std::string, std::string>& options,
                             mg_event_handler_t func,
                             void *user_data) {
   struct mg_context *ctx;
-  const char *name, *value, *default_value;
+  const char *default_value;
   int i;
 
 #if defined(_WIN32) && !defined(__SYMBIAN32__)
@@ -4463,22 +4463,20 @@ struct mg_context *mg_start(const char **options,
   ctx->event_handler = func;
   ctx->user_data = user_data;
 
-  while (options && (name = *options++) != NULL) {
-    if ((i = get_option_index(name)) == -1) {
-      cry(fc(ctx), "Invalid option: %s", name);
-      free_context(ctx);
-      return NULL;
-    } else if ((value = *options++) == NULL) {
-      cry(fc(ctx), "%s: option value cannot be NULL", name);
+  for (auto& option : options) {
+    auto& name = option.first;
+    auto& value = option.second;
+    if ((i = get_option_index(name.c_str())) == -1) {
+      cry(fc(ctx), "Invalid option: %s", name.c_str());
       free_context(ctx);
       return NULL;
     }
     if (ctx->config[i] != NULL) {
-      cry(fc(ctx), "warning: %s: duplicate option", name);
+      cry(fc(ctx), "warning: %s: duplicate option", name.c_str());
       free(ctx->config[i]);
     }
-    ctx->config[i] = mg_strdup(value);
-    DEBUG_TRACE(("[%s] -> [%s]", name, value));
+    ctx->config[i] = mg_strdup(value.c_str());
+    DEBUG_TRACE(("[%s] -> [%s]", name.c_str(), value.c_str()));
   }
 
   // Set default value if needed

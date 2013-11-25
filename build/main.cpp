@@ -30,7 +30,13 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <iostream>
+
+#include <vector>
+using std::vector;
+#include <map>
+using std::map;
+#include <string>
+using std::string;
 
 #include "mongoose.h"
 
@@ -105,50 +111,24 @@ static void show_usage_and_exit(void) {
   exit(EXIT_FAILURE);
 }
 
-static char *sdup(const char *str) {
-  char *p;
-  if ((p = (char *) malloc(strlen(str) + 1)) != NULL) {
-    strcpy(p, str);
-  }
-  return p;
-}
-
-static void set_option(char **options, const char *name, const char *value) {
-  int i;
-
-  for (i = 0; i < MAX_OPTIONS - 3; i++) {
-    if (options[i] == NULL) {
-      options[i] = sdup(name);
-      options[i + 1] = sdup(value);
-      options[i + 2] = NULL;
-      break;
-    } else if (!strcmp(options[i], name)) {
-      free(options[i + 1]);
-      options[i + 1] = sdup(value);
-      break;
-    }
-  }
-
-  if (i == MAX_OPTIONS - 3) {
-    die("%s", "Too many options specified");
-  }
-}
-
-static void process_command_line_arguments(char *argv[], char **options) {
-  char line[MAX_CONF_FILE_LINE_SIZE], opt[sizeof(line)], val[sizeof(line)], *p;
+static void process_command_line_arguments(const vector<string>& args, map<string, string>& options) {
+  char line[MAX_CONF_FILE_LINE_SIZE], opt[sizeof(line)], val[sizeof(line)];
   FILE *fp = NULL;
   size_t i, cmd_line_opts_start = 1, line_no = 0;
 
   // Should we use a config file ?
-  if (argv[1] != NULL && argv[1][0] != '-') {
-    snprintf(config_file, sizeof(config_file), "%s", argv[1]);
+  if (args.size() >= 2 && args[1][0] != '-') {
+    snprintf(config_file, sizeof(config_file), "%s", args[1].c_str());
     cmd_line_opts_start = 2;
-  } else if ((p = strrchr(argv[0], DIRSEP)) == NULL) {
-    // No command line flags specified. Look where binary lives
-    snprintf(config_file, sizeof(config_file), "%s", CONFIG_FILE);
   } else {
-    snprintf(config_file, sizeof(config_file), "%.*s%c%s",
-             (int) (p - argv[0]), argv[0], DIRSEP, CONFIG_FILE);
+    size_t pos = args[0].rfind(DIRSEP);
+    if (pos == string::npos) {
+      // No command line flags specified. Look where binary lives
+      snprintf(config_file, sizeof(config_file), "%s", CONFIG_FILE);
+    } else {
+      snprintf(config_file, sizeof(config_file), "%.*s%c%s",
+               (int)pos, args[0].c_str(), DIRSEP, CONFIG_FILE);
+    }
   }
 
   fp = fopen(config_file, "r");
@@ -176,7 +156,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
         printf("%s: line %d is invalid, ignoring it:\n %s",
                config_file, (int) line_no, line);
       } else {
-        set_option(options, opt, val);
+        options[opt] = val;
       }
     }
 
@@ -186,14 +166,14 @@ static void process_command_line_arguments(char *argv[], char **options) {
   // If we're under MacOS and started by launchd, then the second
   // argument is process serial number, -psn_.....
   // In this case, don't process arguments at all.
-  if (argv[1] == NULL || memcmp(argv[1], "-psn_", 5) != 0) {
+  if (args.size() >= 2 || memcmp(args[1].c_str(), "-psn_", 5) != 0) {
     // Handle command line flags.
     // They override config file and default settings.
-    for (i = cmd_line_opts_start; argv[i] != NULL; i += 2) {
-      if (argv[i][0] != '-' || argv[i + 1] == NULL) {
+    for (i = cmd_line_opts_start; i < args.size(); i += 2) {
+      if (args[i][0] != '-' || i + 1 < args.size()) {
         show_usage_and_exit();
       }
-      set_option(options, &argv[i][1], argv[i + 1]);
+      options[args[i]] = options[args[i + 1]];
     }
   }
 }
@@ -220,66 +200,54 @@ static int is_path_absolute(const char *path) {
 #endif
 }
 
-static char *get_option(char **options, const char *option_name) {
-  int i;
-
-  for (i = 0; options[i] != NULL; i++)
-    if (!strcmp(options[i], option_name))
-      return options[i + 1];
-
-  return NULL;
-}
-
-static void verify_existence(char **options, const char *option_name,
+static void verify_existence(map<string, string>& options, const char *option_name,
                              int must_be_dir) {
   struct stat st;
-  const char *path = get_option(options, option_name);
 
-  if (path != NULL && (stat(path, &st) != 0 ||
+  if (options.count(option_name) != 0 && (stat(options[option_name].c_str(), &st) != 0 ||
                        ((S_ISDIR(st.st_mode) ? 1 : 0) != must_be_dir))) {
     die("Invalid path for %s: [%s]: (%s). Make sure that path is either "
         "absolute, or it is relative to mongoose executable.",
-        option_name, path, strerror(errno));
+        option_name, options[option_name].c_str(), strerror(errno));
   }
 }
 
-static void set_absolute_path(char *options[], const char *option_name,
-                              const char *path_to_mongoose_exe) {
-  char path[PATH_MAX], abs[PATH_MAX], *option_value;
-  const char *p;
-
-  // Check whether option is already set
-  option_value = get_option(options, option_name);
+static void set_absolute_path(map<string, string>& options, const char *option_name,
+                              const string& path_to_mongoose_exe) {
+  char path[PATH_MAX], abs[PATH_MAX];
 
   // If option is already set and it is an absolute path,
   // leave it as it is -- it's already absolute.
-  if (option_value != NULL && !is_path_absolute(option_value)) {
+  if (options.count(option_name) != 0 && !is_path_absolute(options[option_name].c_str())) {
     // Not absolute. Use the directory where mongoose executable lives
     // be the relative directory for everything.
     // Extract mongoose executable directory into path.
-    if ((p = strrchr(path_to_mongoose_exe, DIRSEP)) == NULL) {
+    size_t pos = path_to_mongoose_exe.rfind(DIRSEP);
+    if (pos == string::npos) {
       getcwd(path, sizeof(path));
     } else {
-      snprintf(path, sizeof(path), "%.*s", (int) (p - path_to_mongoose_exe),
-               path_to_mongoose_exe);
+      snprintf(path, sizeof(path), "%.*s", (int)pos,
+               path_to_mongoose_exe.c_str());
     }
 
     strncat(path, "/", sizeof(path) - 1);
-    strncat(path, option_value, sizeof(path) - 1);
+    strncat(path, options[option_name].c_str(), sizeof(path) - 1);
 
     // Absolutize the path, and set the option
     abs_path(path, abs, sizeof(abs));
-    set_option(options, option_name, abs);
+    options[option_name] = abs;
   }
 }
 
 static void start_mongoose(int argc, char *argv[]) {
-  char *options[MAX_OPTIONS];
-  int i;
-
+  vector<string> args;
+  for (int i = 0; i < argc; i++) {
+    args.push_back(string(argv[i]));
+  }
+  
   // Edit passwords file if -A option is specified
-  if (argc > 1 && !strcmp(argv[1], "-A")) {
-    if (argc != 6) {
+  if (args.size() > 1 && args[1].find("-A") == 0) {
+    if (args.size() != 6) {
       show_usage_and_exit();
     }
     exit(mg_modify_passwords_file(argv[2], argv[3], argv[4], argv[5]) ?
@@ -291,21 +259,21 @@ static void start_mongoose(int argc, char *argv[]) {
     show_usage_and_exit();
   }
 
-  options[0] = NULL;
-  set_option(options, "document_root", ".");
+  map<string, string> options;
+  options["document_roor"] = ".";
 
   // Update config based on command line arguments
-  process_command_line_arguments(argv, options);
+  process_command_line_arguments(args, options);
 
   // Make sure we have absolute paths for files and directories
   // https://github.com/valenok/mongoose/issues/181
-  set_absolute_path(options, "document_root", argv[0]);
-  set_absolute_path(options, "put_delete_auth_file", argv[0]);
-  set_absolute_path(options, "cgi_interpreter", argv[0]);
-  set_absolute_path(options, "access_log_file", argv[0]);
-  set_absolute_path(options, "error_log_file", argv[0]);
-  set_absolute_path(options, "global_auth_file", argv[0]);
-  set_absolute_path(options, "ssl_certificate", argv[0]);
+  set_absolute_path(options, "document_root", args[0]);
+  set_absolute_path(options, "put_delete_auth_file", args[0]);
+  set_absolute_path(options, "cgi_interpreter", args[0]);
+  set_absolute_path(options, "access_log_file", args[0]);
+  set_absolute_path(options, "error_log_file", args[0]);
+  set_absolute_path(options, "global_auth_file", args[0]);
+  set_absolute_path(options, "ssl_certificate", args[0]);
 
   // Make extra verification for certain options
   verify_existence(options, "document_root", 1);
@@ -318,10 +286,7 @@ static void start_mongoose(int argc, char *argv[]) {
   signal(SIGCHLD, signal_handler);
 
   // Start Mongoose
-  ctx = mg_start((const char **) options, event_handler, NULL);
-  for (i = 0; options[i] != NULL; i++) {
-    free(options[i]);
-  }
+  ctx = mg_start(options, event_handler, NULL);
 
   if (ctx == NULL) {
     die("%s", "Failed to start Mongoose.");

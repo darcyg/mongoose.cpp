@@ -55,7 +55,7 @@
 		3A346174182CB54B002A5E57 /* lsqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lsqlite3.c; sourceTree = "<group>"; };
 		3A346175182CB54B002A5E57 /* lua_5.2.1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_5.2.1.c; sourceTree = "<group>"; };
 		3A346176182CB54B002A5E57 /* lua_5.2.1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_5.2.1.h; sourceTree = "<group>"; };
-		3A346177182CB54B002A5E57 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3A346177182CB54B002A5E57 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; };
 		3A346178182CB54B002A5E57 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		3A346179182CB54B002A5E57 /* mongoose.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mongoose.ai; sourceTree = "<group>"; };
 		3A34617A182CB54B002A5E57 /* mongoose.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = mongoose.icns; sourceTree = "<group>"; };
