@@ -235,6 +235,7 @@ static void set_absolute_path(map<string, string>& options, const char *option_n
 
     // Absolutize the path, and set the option
     abs_path(path, abs, sizeof(abs));
+    options[option_name] = abs;
   }
 }
 
